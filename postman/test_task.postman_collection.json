@@ -1,0 +1,28 @@
+{
+	"info": {
+		"_postman_id": "c82c8558-48cb-4813-ae64-58ad90fbe440",
+		"name": "test_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28262741"
+	},
+	"item": [
+		{
+			"name": "string-compressor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\" : \"aaaaabcccc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/string-compressor"
+			},
+			"response": []
+		}
+	]
+}
