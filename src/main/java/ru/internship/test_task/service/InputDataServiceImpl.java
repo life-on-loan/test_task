@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 import ru.internship.test_task.dto.SymbolDto;
 import ru.internship.test_task.dto.OutputDto;
+import ru.internship.test_task.error.NotFoundStringException;
 
 import java.util.*;
 
@@ -13,9 +14,13 @@ import static org.slf4j.LoggerFactory.getLogger;
 @Service
 public class InputDataServiceImpl implements InputDataService {
     private static final Logger LOGGER = getLogger(InputDataServiceImpl.class);
+    private final String NOT_FOUND_STR = "Строка не найдена или неверный формат JSON";
 
     @Override
-    public OutputDto countLetters(String str) {
+    public OutputDto countLetters(String str) throws NotFoundStringException {
+        if (str == null) {
+            throw new NotFoundStringException(NOT_FOUND_STR);
+        }
         String curSymbol;
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {

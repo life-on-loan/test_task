@@ -7,13 +7,49 @@
 	},
 	"item": [
 		{
-			"name": "string-compressor",
+			"name": "usual_string",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n    \"input\" : \"aaaaabcccc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/string-compressor"
+			},
+			"response": []
+		},
+		{
+			"name": "empty_string",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/string-compressor"
+			},
+			"response": []
+		},
+		{
+			"name": "empty_request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
 					"options": {
 						"raw": {
 							"language": "json"
